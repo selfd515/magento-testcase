@@ -24,9 +24,9 @@ class UpgradeData implements UpgradeDataInterface
     {
         $setup->startSetup();
 
-        if ($context->getVersion()
-            && version_compare($context->getVersion(),'1.1.0') < 0
-        ) {
+//        if ($context->getVersion()
+//            && version_compare($context->getVersion(),'1.1.0') < 0
+//        ) {
             $tableName = $setup->getTable('selfd_testcase_tasks');
 
             $data = [
@@ -41,7 +41,7 @@ class UpgradeData implements UpgradeDataInterface
             $setup
                 ->getConnection()
                 ->insertMultiple($tableName, $data);
-        }
+//        }
 
         $setup->endSetup();
     }
