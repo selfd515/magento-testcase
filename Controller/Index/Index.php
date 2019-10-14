@@ -26,14 +26,15 @@ class Index extends Action
         Context $context,
         PageFactory $resultPageFactory
     ) {
-        parent::__construct(
+        /*parent::__construct(
             $context
-        );
+        );*/
         $this->resultPageFactory = $resultPageFactory;
+        return parent::__construct($context);
     }
 
     /**
-     * Prints the blog from informed order id
+     * Prints the tasks from informed order id
      * @return Page
      * @throws LocalizedException
      */
