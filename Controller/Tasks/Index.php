@@ -1,5 +1,5 @@
 <?php
-namespace Selfd515\TestCase\Controller\Index;
+namespace Selfd515\TestCase\Controller\Tasks;
 
 use \Magento\Framework\App\Action\Action;
 use \Magento\Framework\View\Result\PageFactory;

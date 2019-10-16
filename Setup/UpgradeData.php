@@ -31,10 +31,10 @@ class UpgradeData implements UpgradeDataInterface
 
             $data = [
                 [
-                    'taskcontent' => 'First tasks in the tasklist.',
+                    'taskcontent' => 'First task in the tasklist.',
                 ],
                 [
-                    'taskcontent' => 'Second tasks in the tasklist.',
+                    'taskcontent' => 'Second task in the tasklist.',
                 ],
             ];
 

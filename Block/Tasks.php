@@ -3,7 +3,7 @@ namespace Selfd515\TestCase\Block;
 
 use \Magento\Framework\View\Element\Template;
 use \Magento\Framework\View\Element\Template\Context;
-use \Toptal\Blog\Model\ResourceModel\Post\Collection as taskCollection;
+use \Selfd515\TestCase\Model\ResourceModel\Task\Collection as taskCollection;
 use \Selfd515\TestCase\Model\ResourceModel\Task\CollectionFactory as taskCollectionFactory;
 use \Selfd515\TestCase\Model\Task;
 
@@ -51,6 +51,24 @@ class Tasks extends Template
         Task $task
     ) {
         return '/testcase/tasks/view/id/' . $task->getId();
+    }
+    /**
+     * Returns add task url
+     * @return string
+     */
+    public function getAddTaskUrl(
+    ) {
+        return '/testcase/tasks/add/';
+    }
+    /**
+     * Returns add task url
+     * @param Task $task
+     * @return string
+     */
+    public function getDeleteTaskUrl(
+        Task $task
+    ) {
+        return '/testcase/tasks/delete/id/' . $task->getId();
     }
 
 }
