@@ -10,16 +10,12 @@ class Add extends \Magento\Framework\App\Action\Action
 {
     protected $_task;
     protected $resultRedirect;
-    protected $logger;
     public function __construct(\Magento\Framework\App\Action\Context $context,
                                 \Selfd515\TestCase\Model\TaskFactory $task,
-                                \Magento\Framework\Controller\ResultFactory $result,
-                                \Psr\Log\LoggerInterface $logger){
-
+                                \Magento\Framework\Controller\ResultFactory $result
+    ){
         $this->_task = $task;
         $this->resultRedirect = $result;
-        $this->logger = $logger;
-        $this->logger->error("zzz construct");
         return parent::__construct($context);
     }
     /**
@@ -29,16 +25,11 @@ class Add extends \Magento\Framework\App\Action\Action
      */
     public function execute()
     {
-        $this->logger->error("zzz execute");
-
-        // 1. POST request : Get data
+        // 1. POST request: Get data from form
         $post = (array) $this->getRequest()->getPost();
 
         if (!empty($post)) {
-            // Retrieve your form data
             $taskcontent   = $post['taskcontent'];
-
-            // Doing-something with...
             $newtask = $this->_task->create();
             $newtask->addData([
                 "taskcontent" => $taskcontent
@@ -46,17 +37,14 @@ class Add extends \Magento\Framework\App\Action\Action
             $savedata = $newtask->save();
 
             if ($savedata) {
-                // Display the success form validation message
-                $this->messageManager->addSuccessMessage('New task added !');
+                $this->messageManager->addSuccessMessage('New task added');
             }
-            // Redirect to your form page (or anywhere you want...)
             $resultRedirect = $this->resultFactory->create(ResultFactory::TYPE_REDIRECT);
             $resultRedirect->setUrl('/testcase/tasks/index');
 
             return $resultRedirect;
         }
-
-//        // 2. GET request : Render the addtask page
+        //GET request: Render the add task page
         $this->_view->loadLayout();
         $this->_view->renderLayout();
     }

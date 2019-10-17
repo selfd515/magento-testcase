@@ -16,7 +16,6 @@ class Task extends AbstractModel implements TaskInterface, IdentityInterface
      * Cache Tag
      */
     const CACHE_TAG='selfd515_testcase_tasks';
-
     /**
      * Task Initialization
      * @retutn void
@@ -52,7 +51,6 @@ class Task extends AbstractModel implements TaskInterface, IdentityInterface
     {
         return $this->getData(self::CREATED_AT);
     }
-
     /**
      * Return Identities
      * @return string[]
@@ -61,7 +59,6 @@ class Task extends AbstractModel implements TaskInterface, IdentityInterface
     {
         return [self::CACHE_TAG.'_'.$this->getId()];
     }
-
     /**
      * Set ID
      *
@@ -82,7 +79,6 @@ class Task extends AbstractModel implements TaskInterface, IdentityInterface
     {
         return $this->setData(self::TASKCONTENT,$content);
     }
-
     /**
      * Set Created At
      *

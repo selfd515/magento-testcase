@@ -1,10 +1,15 @@
 <?php /** @var Selfd515\TestCase\Block\Tasks $block */ ?>
     <h1>Task List</h1>
-<?php foreach($block->getTasks() as $task) { ?>
-    <?php /** @var Selfd515\TestCase\Model\Task */ ?>
-    <h2><a href="<?php echo $block->getTaskUrl($task);?>"><?php echo $task->getContent(); ?></a>
-        <a href="<?php echo $block->getDeleteTaskUrl($task); ?>">Delete</a>
-    </h2>
-<?php } ?>
+    <table>
+        <?php foreach($block->getTasks() as $task) { ?>
+        <?php /** @var Selfd515\TestCase\Model\Task */ ?>
+        <tr>
+            <td><a href="<?php echo $block->getTaskUrl($task);?>"><?php echo $task->getContent(); ?></a></td>
+            <td><a href="<?php echo $block->getDeleteTaskUrl($task); ?>">Delete</a></td>
+        </tr>
+        <?php } ?>        
+    </table>
+    <h2><a href="<?php echo $block->getAddTaskUrl();?>">Add new task</a></h2>
 
-<a href="<?php echo $block->getAddTaskUrl();?>">Add new task</a>
+
+

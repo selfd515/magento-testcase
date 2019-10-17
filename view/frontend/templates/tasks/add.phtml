@@ -1,6 +1,12 @@
 <?php /** @var Selfd515\TestCase\Block\Add $block */ ?>
-<h1>Add new task</h1>
-<form action="<?php echo $block->getFormAction() ?>" method="post">
-        <input name="taskcontent" type="text">
-        <input type="submit" value="Add">
-</form>
+<div style="width: 20vw;">
+    <h1>Add new task</h1>
+    <h2>Enter taskname:</h2>
+    <form action="<?php echo $block->getFormAction() ?>" method="post" data-mage-init='{"validation":{}}'>
+            <input name="taskcontent" type="text" data-validate="{required:true, 'validate-no-empty':true}">
+            <br /><br />
+            <button type="submit" title="Add new task">
+                <span>Add new task</span>
+            </button>
+    </form>
+</div>

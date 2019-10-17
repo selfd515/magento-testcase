@@ -9,7 +9,6 @@ use \Magento\Framework\Exception\LocalizedException;
 
 class Index extends Action
 {
-
     /**
      * @var PageFactory
      */
@@ -26,9 +25,6 @@ class Index extends Action
         Context $context,
         PageFactory $resultPageFactory
     ) {
-        /*parent::__construct(
-            $context
-        );*/
         $this->resultPageFactory = $resultPageFactory;
         return parent::__construct($context);
     }

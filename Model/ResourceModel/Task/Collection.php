@@ -6,7 +6,7 @@
     class Collection extends AbstractCollection
     {
         /**
-         * Remittance File Collection Constructor
+         * File Collection Constructor
          * @return void
          */
         protected function _construct()

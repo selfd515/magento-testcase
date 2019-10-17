@@ -11,6 +11,7 @@ class Tasks extends Template
 {
     /**
      * CollectionFactory
+     * 
      * @var null|CollectionFactory
      */
     protected $_taskCollectionFactory = null;

@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Selfd515\TestCase\Block;
 
 use \Magento\Framework\Exception\LocalizedException;
@@ -14,24 +13,28 @@ class View extends Template
 {
     /**
      * Core registry
+     * 
      * @var Registry
      */
     protected $_coreRegistry;
 
     /**
-     * Post
-     * @var null|Post
+     * Task
+     * 
+     * @var null|Task
      */
     protected $_task = null;
 
     /**
      * TaskFactory
+     * 
      * @var null|TaskFactory
      */
     protected $_taskFactory = null;
 
     /**
      * Constructor
+     * 
      * @param Context $context
      * @param Registry $coreRegistry
      * @param TaskFactory $taskCollectionFactory
@@ -50,28 +53,27 @@ class View extends Template
     }
 
     /**
-     * Lazy loads the requested post
-     * @return Post
+     * Load the requested task
+     * @return Task
      * @throws LocalizedException
      */
     public function getTask()
     {
         if ($this->_task === null) {
-            /** @var Post $post */
+            /** @var Task $task */
             $task = $this->_taskFactory->create();
             $task->load($this->_getTaskId());
 
             if (!$task->getId()) {
                 throw new LocalizedException(__('Task not found'));
             }
-
             $this->_task = $task;
         }
         return $this->_task;
     }
-
     /**
      * Retrieves the task id from the registry
+     * 
      * @return int
      */
     protected function _getTaskId()

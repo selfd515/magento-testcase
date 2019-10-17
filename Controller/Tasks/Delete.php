@@ -7,7 +7,6 @@ use Magento\Framework\App\Action\Context;
 use Selfd515\TestCase\Model\TaskFactory;
 
 class Delete extends \Magento\Framework\App\Action\Action {
-
     /**
      * @var TaskFactory
      */
@@ -34,7 +33,7 @@ class Delete extends \Magento\Framework\App\Action\Action {
             $task = $this->_taskFactory->create();
             $task->load($id);
             $task->delete();
-            $this->messageManager->addSuccessMessage('Task deleted !');
+            $this->messageManager->addSuccessMessage('Task deleted');
         } catch (\Exception $e) {
             $this->messageManager->addErrorMessage($e->getMessage());
         }
@@ -43,5 +42,4 @@ class Delete extends \Magento\Framework\App\Action\Action {
 
         return $resultRedirect;
     }
-
 }

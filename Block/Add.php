@@ -25,7 +25,7 @@ class Add extends \Magento\Framework\View\Element\Template
      */
     public function getFormAction()
     {
-        // returns a addtask action
+        // returns a add action
         return '/testcase/tasks/add';
     }
 }
